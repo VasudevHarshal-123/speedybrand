@@ -59,7 +59,7 @@ const KeyMetricsWrapper = () => {
       });
     }, duration / step); 
     return () => clearInterval(interval);
-  }, []);
+  }, [targetData]);
 
   return (
     <Container>
