@@ -6,22 +6,16 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import StarIcon from "@mui/icons-material/Star";
 
+
+
 const KeyMetricsWrapper = () => {
-  const targetData = {
+  const targetData = useMemo(() => ({
     totalUsers: 120000,
     activeUsers: 45000,
     totalStreams: 1234567,
     revenue: 98000,
     topArtist: "Adele", 
-  }
-
-  const [data, setData] = useState({
-    totalUsers: 0,
-    activeUsers: 0,
-    totalStreams: 0,
-    revenue: 0,
-    topArtist: "",
-  });
+  }), []);
 
   useEffect(() => {
     const duration = 2000;
