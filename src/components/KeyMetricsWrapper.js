@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Container } from "@mui/material";
 import KeyMetricCard from "./KeyMetricCard";
 import PeopleIcon from "@mui/icons-material/People";
@@ -6,16 +6,23 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import StarIcon from "@mui/icons-material/Star";
 
-
+const targetData = {
+  totalUsers: 120000,
+  activeUsers: 45000,
+  totalStreams: 1234567,
+  revenue: 98000,
+  topArtist: "Adele", 
+};
 
 const KeyMetricsWrapper = () => {
-  const targetData = useMemo(() => ({
-    totalUsers: 120000,
-    activeUsers: 45000,
-    totalStreams: 1234567,
-    revenue: 98000,
-    topArtist: "Adele", 
-  }), []);
+  const [data, setData] = useState({
+    totalUsers: 0,
+    activeUsers: 0,
+    totalStreams: 0,
+    revenue: 0,
+    topArtist: "",
+  });
+
 
   useEffect(() => {
     const duration = 2000;
@@ -53,7 +60,7 @@ const KeyMetricsWrapper = () => {
       });
     }, duration / step); 
     return () => clearInterval(interval);
-  }, [targetData]);
+  }, []);
 
   return (
     <Container>
