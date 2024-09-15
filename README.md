@@ -1,5 +1,7 @@
 Streamify Analytics Dashboard
 
+Deployment: https://main--streamify-speedybrand.netlify.app/
+
 Project Overview
 The Streamify Analytics Dashboard is a single-page web application built with React, providing an interactive and visually appealing interface for analyzing key metrics of a fictional music streaming service called "Streamify." The dashboard displays key performance indicators (KPIs) such as user growth, revenue, streaming data, and artist performance, along with interactive data visualizations.
 
