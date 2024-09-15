@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Table,
   TableBody,
@@ -11,33 +11,67 @@ import {
   TextField,
   Button,
   TableSortLabel,
-} from '@mui/material';
+} from "@mui/material";
 
 const DataTable = () => {
   const initialStreams = [
-    { songName: 'Song Anthem', artist: 'John', dateStreamed: '2024-09-10', streamCount: 120, userId: 'U001' },
-    { songName: 'Song Bella chao', artist: 'Doe', dateStreamed: '2024-09-09', streamCount: 105, userId: 'U002' },
-    { songName: 'Song Cashew', artist: 'Alice', dateStreamed: '2024-09-08', streamCount: 98, userId: 'U003' },
-    { songName: 'Song DingDing', artist: 'Wonder', dateStreamed: '2024-09-07', streamCount: 90, userId: 'U004' },
-    { songName: 'Song Electrify', artist: 'Humpty', dateStreamed: '2024-09-06', streamCount: 85, userId: 'U005' },
+    {
+      songName: "Song Anthem",
+      artist: "John",
+      dateStreamed: "2024-09-10",
+      streamCount: 120,
+      userId: "U001",
+    },
+    {
+      songName: "Song Bella chao",
+      artist: "Doe",
+      dateStreamed: "2024-09-09",
+      streamCount: 105,
+      userId: "U002",
+    },
+    {
+      songName: "Song Cashew",
+      artist: "Alice",
+      dateStreamed: "2024-09-08",
+      streamCount: 98,
+      userId: "U003",
+    },
+    {
+      songName: "Song DingDing",
+      artist: "Wonder",
+      dateStreamed: "2024-09-07",
+      streamCount: 90,
+      userId: "U004",
+    },
+    {
+      songName: "Song Electrify",
+      artist: "Humpty",
+      dateStreamed: "2024-09-06",
+      streamCount: 85,
+      userId: "U005",
+    },
   ];
 
-  const [streams, setStreams] = useState(initialStreams);
-  const [sortConfig, setSortConfig] = useState({ key: 'dateStreamed', direction: 'desc' });
-  const [filters, setFilters] = useState({ artist: '', songName: '' });
+  const [streams, ] = useState(initialStreams);
+  const [sortConfig, setSortConfig] = useState({
+    key: "dateStreamed",
+    direction: "desc",
+  });
+  const [filters, setFilters] = useState({ artist: "", songName: "" });
 
   const handleSort = (key) => {
-    const direction = sortConfig.key === key && sortConfig.direction === 'asc' ? 'desc' : 'asc';
+    const direction =
+      sortConfig.key === key && sortConfig.direction === "asc" ? "desc" : "asc";
     setSortConfig({ key, direction });
   };
 
   const sortedStreams = [...streams].sort((a, b) => {
-    if (sortConfig.direction === 'asc') {
+    if (sortConfig.direction === "asc") {
       return a[sortConfig.key] > b[sortConfig.key] ? 1 : -1;
     }
     return a[sortConfig.key] < b[sortConfig.key] ? 1 : -1;
   });
-  
+
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters({ ...filters, [name]: value });
@@ -51,13 +85,13 @@ const DataTable = () => {
   });
 
   return (
-    <div style={{padding: '20px', backgroundColor: 'aliceblue' }}>
+    <div style={{ padding: "20px", backgroundColor: "aliceblue" }}>
       <Typography variant="h4" align="center" gutterBottom>
         Recent Streams
       </Typography>
 
       {/* Filter Inputs */}
-      <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+      <div style={{ display: "flex", gap: "1rem", marginBottom: "1rem" }}>
         <TextField
           label="Filter by Artist"
           variant="outlined"
@@ -80,36 +114,36 @@ const DataTable = () => {
             <TableRow>
               <TableCell>
                 <TableSortLabel
-                  active={sortConfig.key === 'songName'}
+                  active={sortConfig.key === "songName"}
                   direction={sortConfig.direction}
-                  onClick={() => handleSort('songName')}
+                  onClick={() => handleSort("songName")}
                 >
                   Song Name
                 </TableSortLabel>
               </TableCell>
               <TableCell>
                 <TableSortLabel
-                  active={sortConfig.key === 'artist'}
+                  active={sortConfig.key === "artist"}
                   direction={sortConfig.direction}
-                  onClick={() => handleSort('artist')}
+                  onClick={() => handleSort("artist")}
                 >
                   Artist
                 </TableSortLabel>
               </TableCell>
               <TableCell>
                 <TableSortLabel
-                  active={sortConfig.key === 'dateStreamed'}
+                  active={sortConfig.key === "dateStreamed"}
                   direction={sortConfig.direction}
-                  onClick={() => handleSort('dateStreamed')}
+                  onClick={() => handleSort("dateStreamed")}
                 >
                   Date Streamed
                 </TableSortLabel>
               </TableCell>
               <TableCell>
                 <TableSortLabel
-                  active={sortConfig.key === 'streamCount'}
+                  active={sortConfig.key === "streamCount"}
                   direction={sortConfig.direction}
-                  onClick={() => handleSort('streamCount')}
+                  onClick={() => handleSort("streamCount")}
                 >
                   Stream Count
                 </TableSortLabel>

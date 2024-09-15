@@ -1,7 +1,7 @@
-import React from 'react';
-import KeyMetricsWrapper from './KeyMetricsWrapper';
-import DataVisualization from './DataVisualization';
-import './css/DashboardLayout.css';  
+import React from "react";
+import KeyMetricsWrapper from "./KeyMetricsWrapper";
+import DataVisualization from "./DataVisualization";
+import "./css/DashboardLayout.css";
 
 const DashboardLayout = () => {
   return (

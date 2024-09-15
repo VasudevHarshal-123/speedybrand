@@ -1,7 +1,6 @@
-// src/components/DataVisualization.js
-import React from 'react';
-import { Grid, Container, Typography } from '@mui/material';
-import { Line, Pie, Bar } from 'react-chartjs-2';
+import React from "react";
+import { Grid, Container, Typography } from "@mui/material";
+import { Line, Pie, Bar } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   LineElement,
@@ -12,7 +11,7 @@ import {
   BarElement,
   Tooltip,
   Legend,
-} from 'chart.js';
+} from "chart.js";
 
 ChartJS.register(
   LineElement,
@@ -26,44 +25,60 @@ ChartJS.register(
 );
 
 const DataVisualization = () => {
-  // Data for User Growth (Line Chart)
   const userGrowthData = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+    labels: [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec",
+    ],
     datasets: [
       {
-        label: 'Total Users',
-        data: [50000, 52000, 56000, 60000, 64000, 68000, 70000, 74000, 78000, 81000, 85000, 90000],
-        borderColor: '#3f51b5',
+        label: "Total Users",
+        data: [
+          50000, 52000, 56000, 60000, 64000, 68000, 70000, 74000, 78000, 81000,
+          85000, 90000,
+        ],
+        borderColor: "#3f51b5",
         fill: false,
       },
       {
-        label: 'Active Users',
-        data: [30000, 31000, 34000, 36000, 40000, 41000, 42000, 44000, 46000, 48000, 50000, 53000],
-        borderColor: '#ff4081',
+        label: "Active Users",
+        data: [
+          30000, 31000, 34000, 36000, 40000, 41000, 42000, 44000, 46000, 48000,
+          50000, 53000,
+        ],
+        borderColor: "#ff4081",
         fill: false,
       },
     ],
   };
 
-  // Data for Revenue Distribution (Pie Chart)
   const revenueDistributionData = {
-    labels: ['Subscriptions', 'Ads'],
+    labels: ["Subscriptions", "Ads"],
     datasets: [
       {
         data: [65000, 35000],
-        backgroundColor: ['#3f51b5', '#ff4081'],
+        backgroundColor: ["#3f51b5", "#ff4081"],
       },
     ],
   };
 
-  // Data for Top 5 Streamed Songs (Bar Chart)
   const topSongsData = {
-    labels: ['Song A', 'Song B', 'Song C', 'Song D', 'Song E'],
+    labels: ["Song A", "Song B", "Song C", "Song D", "Song E"],
     datasets: [
       {
-        label: 'Stream Count',
+        label: "Stream Count",
         data: [12000, 10500, 9800, 9000, 8500],
-        backgroundColor: '#3f51b5',
+        backgroundColor: "#3f51b5",
       },
     ],
   };
