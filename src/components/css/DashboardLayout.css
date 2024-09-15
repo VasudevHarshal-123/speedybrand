@@ -1,0 +1,41 @@
+.background-image {
+    height: 400px;
+    background-image: url('../Resources/Images/backg.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .main-heading {
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .metrics-section {
+    padding: 20px;
+    background-color: aliceblue;
+  }
+  
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .visualization-section {
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  /* General Styling */
+  body {
+    font-family: Arial, sans-serif;
+  }
+  
+  h4 {
+    font-weight: bold;
+  }
+  
